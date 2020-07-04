@@ -1,0 +1,94 @@
+{
+    "name": "base-app",
+    "version": "0.0.1",
+    "private": true,
+    "author": "Vipul Raotole",
+    "lint-staged": {
+        "src/**/*.{js,jsx}": [
+            "npm run lint:fix",
+            "npm run format",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged && npm run test:offWatch"
+        }
+    },
+    "dependencies": {
+        "babel-polyfill": "6.26.0",
+        "connected-react-router": "6.8.0",
+        "cross-spawn": "7.0.1",
+        "fetch-mock": "7.5.1",
+        "history": "4.7.2",
+        "jest-fetch-mock": "2.1.2",
+        "moment": "2.22.2",
+        "node-sass": "4.12.0",
+        "npm-run-all": "4.1.5",
+        "prop-types": "15.6.2",
+        "react": "16.13.1",
+        "react-app-polyfill": "1.0.6",
+        "react-dom": "16.13.1",
+        "react-redux": "7.2.0",
+        "react-router-dom": "5.1.2",
+        "react-scripts": "3.2.0",
+        "redux": "4.0.4",
+        "redux-api-middleware": "3.2.1",
+        "redux-mock-store": "1.5.3",
+        "redux-thunk": "2.3.0",
+        "seamless-immutable": "7.1.4",
+        "whatwg-fetch": "2.0.4"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.0.2",
+        "@testing-library/react": "^9.4.0",
+        "cypress": "4.5.0",
+        "eslint": "6.1.0",
+        "eslint-detailed-reporter": "0.7.4",
+        "eslint-formatter-summary": "1.x.x",
+        "eslint-plugin-import": "2.14.0",
+        "eslint-plugin-react": "7.11.1",
+        "husky": "3.0.9",
+        "lint-staged": "7.3.0",
+        "prettier": "1.14.3",
+        "redux-immutable-state-invariant": "2.1.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --watchAll",
+        "eject": "react-scripts eject",
+        "lint": "eslint --ext=js --ext=jsx .",
+        "lint:fix": "eslint --ext=js --ext=jsx --fix .",
+        "format": "prettier --write \"./src/**/*.(js|jsx|json|yml|yaml|css|scss)\"",
+        "test:offWatch": "react-scripts test --watchAll=false",
+        "test:coverage":"npm run test -- --coverage --watchAll=false ",
+        "ci": "npm-run-all ci:lint test:coverage",
+        "ci:lint": "eslint --quiet --ext .js --ext .jsx src/",
+        "lint:report": "npm-run-all --parallel lint:totals lint:detail",
+        "lint:detail": "node --harmony ./eslint-settings/eslint-support/task.eslint-detail.js",
+        "lint:totals": "node --harmony ./eslint-settings/eslint-support/task.eslint-totals.js"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "plugin:prettier/recommended"
+        ]
+    },
+    "eslintIgnore": [
+        "*.test.js",
+        "*.spec.js"
+    ],
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
