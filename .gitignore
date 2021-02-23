@@ -15,3 +15,4 @@ coverage/*
 !coverage/.gitkeep
 dist/*
 !dist/.gitkeep
+build

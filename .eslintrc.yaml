@@ -1,10 +1,6 @@
-
 extends:
-  - "react-app"
-  - "./eslint-settings/.eslintrc.yaml"
+    - 'react-app'
+# Project specific override rules here
+#extends:
+#    - './eslint-config/eslintrc.yml'
 
-# Project specific override rules may appear here
-
-# rules:
-#   example-override: warn
-#   example-override: off
