@@ -9,35 +9,35 @@ import { ErrorComponent } from 'components/Error';
 import { withContent } from 'hocs/withContent';
 
 const AppComponent = memo(function App({ loader, content, error }) {
-  if (!content) {
-    return null;
-  }
-  return (
-    <div>
-      <HeaderComponent />
-      <div>
-        <ErrorComponent hasError={error.showError} content={content}>
-          {AppRouter}
-          <LoaderComponent isLoading={loader.loading} text={content.loadingText} />
-        </ErrorComponent>
-      </div>
-    </div>
-  );
+    if (!content) {
+        return null;
+    }
+    return (
+        <div>
+            <HeaderComponent />
+            <div>
+                <ErrorComponent hasError={error.showError} content={content}>
+                    {AppRouter}
+                    <LoaderComponent isLoading={loader.loading} text={content.loadingText} />
+                </ErrorComponent>
+            </div>
+        </div>
+    );
 });
 
 const mapStateToProps = (state) => ({
-  loader: state.loader,
-  error: state.error
+    loader: state.loader,
+    error: state.error
 });
 
 AppComponent.propTypes = {
-  loader: PropTypes.shape({
-    loading: PropTypes.bool
-  }),
-  error: PropTypes.shape({
-    loading: PropTypes.bool
-  }),
-  content: PropTypes.object.isRequired
+    loader: PropTypes.shape({
+        loading: PropTypes.bool
+    }),
+    error: PropTypes.shape({
+        loading: PropTypes.bool
+    }),
+    content: PropTypes.object.isRequired
 };
 
 const App = compose(withContent(), connect(mapStateToProps))(AppComponent);

@@ -1,4 +1,4 @@
-const nextActionMiddleware = store => next => action => {
+const nextActionMiddleware = (store) => (next) => (action) => {
     if (!action.meta || !action.meta.nextAction) {
         return next(action);
     }
