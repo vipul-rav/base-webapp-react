@@ -8,5 +8,6 @@
     "ExitText":"Exit",
     "btnContinue":"Continue",
     "externalContent":"Please wait....",
-    "homePageText":"Home Page"
+    "homePageText":"Home Page",
+    "postListHeader":"A sample component for post List: "
 }

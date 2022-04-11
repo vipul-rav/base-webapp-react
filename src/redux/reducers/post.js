@@ -2,7 +2,7 @@ import * as actionTypes from 'constants/actionTypes';
 
 const initialState = {
     postList: null,
-    postDetail: null,
+    postDetail: null
 };
 
 const post = (state = initialState, action) => {

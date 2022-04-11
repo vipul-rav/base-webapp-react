@@ -1,5 +1,5 @@
 const initialState = {
-    showError: false,
+    showError: false
 };
 
 const error = (state = initialState, action) => {

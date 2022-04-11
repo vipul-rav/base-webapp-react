@@ -1,8 +1,8 @@
 import React from 'react';
+import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import '@testing-library/jest-dom/extend-expect';
 
 let store;
 beforeEach(() => {
@@ -14,8 +14,7 @@ beforeEach(() => {
 const AllTheProviders = ({ children }) => {
     return <Provider store={store}>{children}</Provider>;
 };
-const customRender = (ui, options) =>
-    render(ui, { wrapper: AllTheProviders, ...options });
+const customRender = (ui, options) => render(ui, { wrapper: AllTheProviders, ...options });
 
 // re-export everything
 export * from '@testing-library/react';

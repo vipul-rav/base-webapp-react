@@ -5,13 +5,13 @@ import { loader } from './loader';
 import { error } from './error';
 import { post } from './post';
 
-const rootReducer = history => {
+const rootReducer = (history) => {
     return combineReducers({
         loader,
         config,
         error,
         post,
-        router: connectRouter(history),
+        router: connectRouter(history)
     });
 };
 
